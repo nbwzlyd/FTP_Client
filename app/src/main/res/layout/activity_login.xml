@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <ImageView
+        android:id="@+id/ftp_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="#1590D7"
+        android:src="@drawable/ftp_logo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/ip_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:text="ip/域名"
+        android:textColor="#1590D7"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="输入ip地址"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:textColor="#000000"
+        android:textColorHint="#F2F6F6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ip_address"
+        app:layout_constraintLeft_toRightOf="@+id/ip_address"
+        app:layout_constraintRight_toLeftOf="@id/server_port"/>
+
+    <TextView
+        android:id="@+id/server_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="端口号"
+        android:textColor="#1590D7"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ip_address"
+        app:layout_constraintRight_toLeftOf="@+id/et_server_port" />
+
+
+    <EditText
+        android:id="@+id/et_server_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="默认21"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="16dp"
+        android:textColor="#000000"
+        android:textColorHint="#F2F6F6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/server_port"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/server_port" />
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="15dp"
+        android:text="帐号"
+        android:textColor="#1590D7"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/anonymous" />
+
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="16dp"
+        tools:text="1111111"
+        android:textColor="#000000"
+        android:textColorHint="#F2F6F6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/account"
+        app:layout_constraintLeft_toRightOf="@+id/account"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="15dp"
+        android:text="密码"
+        android:textColor="#1590D7"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/account" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="16dp"
+        android:textColor="#000000"
+        android:textColorHint="#F2F6F6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/password"
+        app:layout_constraintLeft_toRightOf="@+id/password"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="1111111"/>
+
+    <TextView
+        android:id="@+id/anonymous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="匿名登录"
+        android:paddingLeft="16dp"
+        android:textSize="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ip_address"
+        android:textColor="#1590D7"
+        />
+
+    <com.socket.ftpdome.view.SwitchView
+        android:id="@+id/switch_view"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/server_port"
+        app:layout_constraintBottom_toBottomOf="@id/anonymous"
+        />
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/login_shape"
+        android:gravity="center"
+        android:text="登陆"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
